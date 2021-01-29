@@ -15,9 +15,9 @@ const swap = (array, idx1, idx2) => {
 
 // Bubble Sort
 const bubbleSort = array => {
-  let swapped = false; // set default base to false
+  let swapped = false; // boolean indicating whether a pair of elements were swapped while iterating
 
-  // loop through entire array, comparing pairs from left to right
+  // loop through entire array, comparing elem pairs from left to right
   for(let i = 0; i< array.length; i++){
     if(array[i] > array[i+1]){  // if 1st val greater than 2nd...
       swap(array, i, i+1);      // ... swap values so lower is closer to array start
@@ -28,6 +28,7 @@ const bubbleSort = array => {
   if(swapped === false) return array;
 
   // step: recursively call the function again until sorted
+  // (i.e. recurse until swapped variable remains false after iterating through the array)
   return bubbleSort(array);
 }
 
